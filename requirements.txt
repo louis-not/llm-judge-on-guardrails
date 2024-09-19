@@ -1,0 +1,5 @@
+nemoguardrails==0.9
+openai
+langchain
+langchain-openai
+python-dotenv

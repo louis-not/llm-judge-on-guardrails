@@ -1,0 +1,19 @@
+# ping
+define user developer test
+    "ping"
+
+define bot developer test
+    "test acknowledged"
+
+define flow developer test
+    user developer test
+    bot developer test
+
+# llm_as_judge review
+define bot inform llm judge refusal
+  "this message is discarded"
+
+define subflow check sentiment judge output
+    $allowed = execute llm_sentiment_judge
+    if not $allowed
+        bot refuse
